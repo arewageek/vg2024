@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Calendar, Camera, Gift } from "lucide-react";
+import { Home, Calendar, Camera, Image } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,13 +9,13 @@ const navItems = [
   { href: "/", label: "Home", icon: Home },
   { href: "/program", label: "Program", icon: Calendar },
   { href: "/uploads", label: "Uploads", icon: Camera },
-  { href: "/gift", label: "Send Gift", icon: Gift },
+  { href: "/gallery", label: "Gallery", icon: Image },
 ];
 
 const navVariants = {
   hidden: { y: 100, opacity: 0 },
-  visible: { 
-    y: 0, 
+  visible: {
+    y: 0,
     opacity: 1,
     transition: {
       type: "spring",
@@ -28,8 +28,8 @@ const navVariants = {
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: { 
-    y: 0, 
+  visible: {
+    y: 0,
     opacity: 1,
     transition: {
       type: "spring",
@@ -42,7 +42,7 @@ export function MobileNav() {
   const pathname = usePathname();
 
   return (
-    <motion.nav 
+    <motion.nav
       variants={navVariants}
       initial="hidden"
       animate="visible"
@@ -50,13 +50,13 @@ export function MobileNav() {
                  backdrop-blur-lg supports-[backdrop-filter]:bg-primary-dark/80 
                  border-t border-primary-light/20 px-4 pb-safe shadow-lg"
     >
-      <motion.div 
+      <motion.div
         className="flex justify-around items-center h-16 max-w-md mx-auto"
       >
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           const Icon = item.icon;
-          
+
           return (
             <Link key={item.href} href={item.href} className="w-full">
               <motion.div

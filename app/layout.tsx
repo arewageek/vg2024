@@ -1,6 +1,7 @@
 import './globals.css';
 import { Playfair_Display, Raleway } from 'next/font/google';
 import { MobileNav } from '@/components/mobile-nav';
+import { BackgroundMusic } from '@/components/global/audio-player';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className="font-body bg-background text-text antialiased pb-20">
         {children}
         <MobileNav />
+        {/* <BackgroundMusic /> */}
       </body>
     </html>
   );
