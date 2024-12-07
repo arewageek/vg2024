@@ -7,41 +7,151 @@ import { PhotoCategories } from "./photo-categories";
 
 const photos = [
     {
-        url: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=800&q=80",
-        description: "Our first meeting at the Military Ball. The stars aligned that night, and the rest is history.",
-        year: "2019",
-        category: "Military Life"
-    },
-    {
-        url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80",
-        description: "Lieutenant's commissioning ceremony. A proud moment shared together.",
-        year: "2020",
+        url: "assets/IMG_3524.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
         category: "Pre Wedding"
     },
     {
-        url: "https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?w=800&q=80",
-        description: "Weekend getaway to Lagos. Making memories by the beach.",
+        url: "assets/IMG_3333.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+    {
+        url: "assets/IMG_3505.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+    {
+        url: "assets/IMG_3451.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+    {
+        url: "assets/IMG_3421.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+    {
+        url: "assets/IMG_3412.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+    {
+        url: "assets/IMG_3403.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+    {
+        url: "assets/0d584a15-c1cb-4b8e-9049-5b0b58e2e78c",
+        description: "On a lunch date",
         year: "2021",
         category: "Love Story"
     },
+
     {
-        url: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&q=80",
-        description: "Family dinner where we announced our engagement. Joy all around!",
-        year: "2022",
-        category: "Single"
+        url: "assets/1681970e-e52e-4886-9916-46af428f03dc",
+        description: "",
+        year: "2021",
+        category: "Love Story"
     },
+
     {
-        url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80",
-        description: "Traditional engagement ceremony. Two families becoming one.",
-        year: "2023",
-        category: "Single"
+        url: "assets/33674ff3-d952-41b4-9385-6ba0dcd934d3",
+        description: "",
+        year: "2021",
+        category: "Love Story"
     },
+
     {
-        url: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&q=80",
-        description: "Pre-wedding photoshoot. Counting down to the big day!",
+        url: "assets/85fd3192-faa5-4a9c-9b64-d6a848459387",
+        description: "Introduction",
         year: "2024",
         category: "Love Story"
-    }
+    },
+
+    {
+        url: "assets/d65182e7-8aa4-495b-b36d-2e5df2c6f9c4",
+        description: "",
+        year: "2024",
+        category: "Love Story"
+    },
+
+    {
+        url: "assets/ea95fcd0-a626-439c-94bf-9511d805d41b",
+        description: "Marriage Proposal",
+        year: "2024",
+        category: "Love Story"
+    },
+
+    {
+        url: "assets/ef139d0a-6769-4690-8942-8a4c0ec05d76",
+        description: "",
+        year: "2024",
+        category: "Love Story"
+    },
+
+    {
+        url: "assets/IMG_3287.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+
+    {
+        url: "assets/IMG_3288.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+
+    {
+        url: "assets/IMG_3296.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
+
+    {
+        url: "assets/IMG_3298.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+    {
+        url: "assets/IMG_3304.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+    {
+        url: "assets/IMG_3324.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+    {
+        url: "assets/IMG_3326.jpg",
+        description: "Pre wedding photos",
+        year: "2024",
+        category: "Pre Wedding"
+    },
+
 ];
 
 export function PhotoGrid() {
@@ -109,7 +219,7 @@ export function PhotoGrid() {
                                         setSelectedPhoto(photo);
                                         setIsModalOpen(true);
                                     }}
-                                    className="relative aspect-[16/9] rounded-xl overflow-hidden cursor-pointer"
+                                    className="relative aspect-[16/16] rounded-xl overflow-hidden cursor-pointer"
                                 >
                                     <motion.img
                                         layoutId={`gallery-image-${photo.url}`}

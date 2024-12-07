@@ -8,11 +8,17 @@ import { CommentsGrid } from "./comments-grid";
 import { loremIpsum } from "lorem-ipsum";
 
 const groomStory = [
-    `${loremIpsum()}`, `${loremIpsum()}`, `${loremIpsum()}`,
+    "In 2019, during our cadet training at the Nigeria Defence Academy (NDA), Kaduna, I visited a friend at the Air Force Base, Kaduna. As cadets, we were occasionally granted a 3-4 hour liberty pass to leave the Academy and visit Kaduna town. It was on one of those Sundays that I decided to check on my close friend, AY, at the NAF Base.",
+    "While catching up, I asked AY to recommend a good spot where I could find some delicious Afang soup. Normally, my problem no pass food😂 AY didn’t disappoint. He took me to Maami Market at the Base, assuring me I’d get the best meal there.",
+    "When we arrived, I was met with more than just good food—I met her. Vera. She was the prettiest woman I had ever seen, and as fate would have it, her mum owned the restaurant. Vera happened to be helping out that afternoon, and from the moment I saw her, I couldn’t take my eyes off her.",
+    "After the meal, I mustered the courage to approach her, ask her name, and strike up a conversation. She smiled warmly, and we exchanged a few words. Little did I know, that brief moment would spark a journey that has brought us here today.",
+    "Now, we stand together, taking this bold step of faith as we begin a new chapter of our lives. We pray for God’s abundant love and blessings upon this union. I can confidently say that I have found my gee for life—the woman who completes me."
 ];
 
 const brideStory = [
-    `${loremIpsum()}`, `${loremIpsum()}`, `${loremIpsum()}`,
+    "I first met Godwin in 2019 on a Sunday evening when he visited my mom’s restaurant to eat. He couldn’t hide how captivated he was by my beauty😂 (his words, not mine!) and of course, had no choice but to ask for my number. We started talking shortly after, but life got in the way, and we lost touch for a while.",
+    "In 2020, we reconnected after I came across one of his status updates. This time, our conversations flowed effortlessly and we built a strong friendship that soon blossomed into a relationship. From countless bowls of ice cream to sharing kilishi and fura yogurt 😍😂our bond grew stronger with each passing day.",
+    "And here we are now, embarking on this beautiful journey together!"
 ];
 
 export function HomeContent() {
@@ -71,10 +77,10 @@ export function HomeContent() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-8"
+                    className="relative w-full aspect-[5/4] rounded-2xl overflow-hidden mb-8"
                 >
                     <Image
-                        src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80"
+                        src="assets/IMG_3288.jpg"
                         alt="Military Love Story"
                         fill
                         className="object-cover"
@@ -86,7 +92,7 @@ export function HomeContent() {
                         transition={{ delay: 0.6 }}
                         className="absolute bottom-4 left-4 right-4 text-white text-center"
                     >
-                        <p className="text-lg font-medium mb-1">Lt G. O. Ameh & Dr. Veronica Onojah</p>
+                        <p className="text-lg font-medium mb-1">Lt G. O. Ameh & Miss Veronica Onojah</p>
                         <p className="text-sm opacity-80">#VG2024</p>
                     </motion.div>
                 </motion.div>
@@ -110,7 +116,7 @@ export function HomeContent() {
                     title="How I Met Her"
                     author="Lt. G. O. Ameh"
                     paragraphs={groomStory}
-                    image="https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=800&q=80"
+                    image="assets/ef139d0a-6769-4690-8942-8a4c0ec05d76"
                 />
 
                 <StorySection
@@ -118,7 +124,7 @@ export function HomeContent() {
                     author="Dr. Veronica Onojah"
                     paragraphs={brideStory}
                     align="right"
-                    image="https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?w=800&q=80"
+                    image="assets/ea95fcd0-a626-439c-94bf-9511d805d41b"
                 />
             </div>
 

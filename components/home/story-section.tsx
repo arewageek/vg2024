@@ -73,7 +73,7 @@ export function StorySection({ title, author, paragraphs, align = "left", image 
                 </motion.div>
             )}
 
-            <div className="mt-6 space-y-6">
+            <div className="mt-6 space-y-6 text-justify">
                 {paragraphs.map((paragraph, index) => (
                     <motion.div
                         key={index}

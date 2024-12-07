@@ -1,5 +1,6 @@
 "use client";
 
+import { uploadFile } from "@/lib/storage";
 import { motion, AnimatePresence } from "framer-motion";
 import { Upload, Image as ImageIcon, Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -7,14 +8,17 @@ import { useState } from "react";
 export function UploadSection() {
   const [isUploading, setIsUploading] = useState(false);
   const [myUploads, setMyUploads] = useState<string[]>([]);
+  const [selection, setSelection] = useState<File>()
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     setIsUploading(true);
     // Simulate upload
     setTimeout(() => {
       setIsUploading(false);
       setMyUploads(prev => [...prev, "https://images.unsplash.com/photo-1519741497674-611481863552"]);
     }, 2000);
+
+    // const doUpload = await uploadFile(selection as File)
   };
 
   return (

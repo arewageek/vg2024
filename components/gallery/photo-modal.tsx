@@ -43,7 +43,7 @@ export function PhotoModal({ isOpen, onClose, photo }: PhotoModalProps) {
                             <X size={20} />
                         </motion.button>
 
-                        <div className="aspect-[4/3] relative">
+                        <div className="aspect-[4/4] relative">
                             <motion.img
                                 layoutId={`gallery-image-${photo.url}`}
                                 src={photo.url}

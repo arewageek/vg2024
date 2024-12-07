@@ -11,7 +11,7 @@ const categories = [
     "All",
     "Pre Wedding",
     "Love Story",
-    "Single",
+    // "Single",
 ];
 
 export function PhotoCategories({ active, onSelect }: CategoryProps) {
