@@ -49,7 +49,6 @@ export function UploadSection() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-surface rounded-2xl p-6 shadow-lg border border-primary/10 overflow-hidden"
-                onClick={handleUpload}
               >
                 <motion.div
                   className="border-2 border-dashed border-primary/30 rounded-xl p-8 text-center cursor-pointer 

@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { ProgramSection } from "@/components/program/program-section";
 import { MassOrder } from "@/components/program/mass-order";
+import { ReceptionOrder } from "@/components/program/reception-order";
+import { PhotoOrder } from "@/components/program/photo-order";
+import { CreditsSection } from "@/components/program/credits-section";
 import { ScrollText } from "lucide-react";
 
 export default function Program() {
@@ -36,11 +39,15 @@ export default function Program() {
         </ProgramSection>
 
         <ProgramSection title="Order of Reception">
-          <p className="text-text/60 italic text-center">Content coming soon...</p>
+          <ReceptionOrder />
         </ProgramSection>
 
         <ProgramSection title="Order of Photograph">
-          <p className="text-text/60 italic text-center">Content coming soon...</p>
+          <PhotoOrder />
+        </ProgramSection>
+
+        <ProgramSection title="Credits">
+          <CreditsSection />
         </ProgramSection>
       </div>
     </motion.main>
