@@ -1,6 +1,6 @@
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "./firebase";
-import nano from "nanoid";
+import { nanoid } from "nanoid";
 import { connectMongoDB } from "./db";
 import Upload from "@/model/upload";
 
@@ -27,7 +27,7 @@ export const uploadFile = async ({
   desc,
 }: IUpload): Promise<{ success: boolean; message?: string; path?: string }> => {
   try {
-    const fileName = nano.nanoid();
+    const fileName = nanoid();
     const folder = "wedding-photos";
     const storageRef = ref(
       storage,

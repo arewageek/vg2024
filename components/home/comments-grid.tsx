@@ -6,34 +6,9 @@ import { loremIpsum } from "lorem-ipsum"
 
 const comments = [
     {
-        name: "Sarah Johnson",
-        role: "Chief Bridesmaid",
-        comment: loremIpsum()
-    },
-    {
-        name: "Capt. James Wilson",
-        role: "Best Man",
-        comment: loremIpsum()
-    },
-    {
-        name: "Dr. Elizabeth Adebayo",
-        role: "Bridesmaid",
-        comment: loremIpsum()
-    },
-    {
-        name: "Lt. Col. Michael Okonjo",
-        role: "Groomsman",
-        comment: loremIpsum()
-    },
-    {
-        name: "Grace Okoro",
-        role: "Bridesmaid",
-        comment: loremIpsum()
-    },
-    {
-        name: "Major David Ekong",
-        role: "Groomsman",
-        comment: loremIpsum()
+        name: "Austin Ameh",
+        role: "The Geek",
+        comment: "Waiting or content from them ;)"
     }
 ];
 
