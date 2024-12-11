@@ -29,7 +29,7 @@ export default function Gallery() {
           Our Journey
         </h1>
         <p className="text-primary/80 font-medium">
-          Lt GO Ameh & Miss. Veronica Onojah
+          Lt GO Ameh & Miss. Veronica Onoja
         </p>
         <p className="text-primary/60 text-sm">#VG2024</p>
       </motion.div>

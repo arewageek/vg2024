@@ -114,14 +114,14 @@ export function HomeContent() {
             <div className="space-y-16 relative">
                 <StorySection
                     title="How I Met Her"
-                    author="Lt. G. O. Ameh"
+                    author="Lt GO Ameh"
                     paragraphs={groomStory}
                     image="assets/ef139d0a-6769-4690-8942-8a4c0ec05d76"
                 />
 
                 <StorySection
                     title="How I Met Him"
-                    author="Dr. Veronica Onojah"
+                    author="Veronica Onoja "
                     paragraphs={brideStory}
                     align="right"
                     image="assets/ea95fcd0-a626-439c-94bf-9511d805d41b"
