@@ -92,7 +92,7 @@ export function HomeContent() {
                         transition={{ delay: 0.6 }}
                         className="absolute bottom-4 left-4 right-4 text-white text-center"
                     >
-                        <p className="text-lg font-medium mb-1">Lt G. O. Ameh & Miss Veronica Onojah</p>
+                        <p className="text-lg font-medium mb-1">Lt GO Ameh & Miss Veronica Onoja</p>
                         <p className="text-sm opacity-80">#VG2024</p>
                     </motion.div>
                 </motion.div>

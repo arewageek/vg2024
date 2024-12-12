@@ -10,7 +10,7 @@ interface Credit {
 }
 
 const credits: Credit[] = [
-    { role: "Wedding Planner", name: "Joy Ameh", phone: "09061586388" },
+    { role: "Event Planner", name: "Joda", phone: "09061586388" },
     { role: "DJ", name: "DJ slimfit", phone: "07037879594" },
     { role: "MC", name: "MC Johnny", phone: "08135400315" },
     { role: "Website Developer", name: "Arewa Geek", phone: "0913355101" },

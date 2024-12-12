@@ -6,14 +6,10 @@ interface MassSection {
     title: string;
     content: string | string[];
     type?: "reading" | "response" | "default";
+    passage?: string
 }
 
 const massOrder: MassSection[] = [
-    {
-        title: "Important Notice",
-        content: "In order to respect the dignity of the ceremony, we ask that there is no flash photography during mass. Also, please silence all cell phones and other electronic devices.",
-        type: "default"
-    },
     {
         title: "Introductory Rite",
         content: [
@@ -25,12 +21,12 @@ const massOrder: MassSection[] = [
     {
         title: "Liturgy of the Word",
         content: "(Please be seated)",
-        type: "default"
+        type: "default",
     },
     {
         title: "First Reading",
+        passage: "A reading from the book of Genesis 2:18-24",
         content: [
-            "A reading from the book of Genesis 2:18-24",
             "\"They shall become one flesh\"",
             "The LORD GOD said: \"It is not good that the man should be alone; I will make him a helper fit for him\". So out of the ground the LORD GOD formed every beast of the field and every bird of the air, and brought them to the man to see what he would call them; and whatever the man called every living creature, that was its name.",
             "The man gave names to all cattle, and to the birds of the air, and to every beast of the field; but for the man there was not found a helper fit for him. So the LORD GOD caused a deep sleep to fall upon the man, and while he slept took one of his ribs and closed up its place with flesh; and the rib which the LORD God had taken from the man he made into a woman and brought her to the man.",
@@ -47,8 +43,8 @@ const massOrder: MassSection[] = [
     },
     {
         title: "Responsorial Psalms",
+        passage: "Psalms 33:12 and 18:20-21, 22",
         content: [
-            "Psalms 33:12 and 18:20-21, 22",
             "The Lord's merciful love fills the earth.",
             "Blessed the nation whose God is the LORD, the people he had chosen as his heritage. Yes, the LORD'S eyes are on those who fear him, who hope in his merciful love.",
             "Our soul is waiting for the LORD. He is our help and our shield. In him do our hearts find joy. We trust in his holy name.",
@@ -58,8 +54,8 @@ const massOrder: MassSection[] = [
     },
     {
         title: "Second Reading",
+        passage: "A reading from the letter of Saint Paul to the Ephesians. 5:2a, 21-33",
         content: [
-            "A reading from the letter of Saint Paul to the Ephesians. 5:2a, 21-33",
             "\"This is a great mystery, and I mean in reference to Christ and the Church\"",
             "Brethren: Walk in love, as Christ loved us and gave himself up for us. Be subject to one another out of reverence for Christ.",
             "Wives, be subject to your husbands, as to the Lord. For the husband is the head of the wife as Christ is the head of the Church, his body, and is himself its saviour.",
@@ -87,8 +83,8 @@ const massOrder: MassSection[] = [
     },
     {
         title: "Gospel",
+        passage: "A reading from the holy Gospel according to John. John 15:9-12",
         content: [
-            "A reading from the holy Gospel according to John. John 15:9-12",
             "\"Abide in my love\"",
             "At that time: Jesus said to his disciples, \"As the Father has loved me, so have I loved you; abide in my love.",
             "If you keep my commandments, you will abide in my love, just as I have kept my Father's commandments and abide in his love.",
@@ -139,6 +135,22 @@ const massOrder: MassSection[] = [
 export function MassOrder() {
     return (
         <div className="space-y-6">
+
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
+            >
+                <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Important Notice</h3>
+                <div className="space-y-3 text-justify">
+                    <p className="text-text leading-relaxed font-bold">
+                        In order to respect the dignity of the ceremony, we ask that there is no flash photography during mass. Also, please silence all cell phones and other electronic devices.
+                    </p>
+                </div>
+            </motion.div>
+
             {massOrder.map((section, index) => (
                 <motion.div
                     key={index}
@@ -150,8 +162,10 @@ export function MassOrder() {
                         section.type === "response" ? "bg-secondary/5" : ""
                         }`}
                 >
-                    <h3 className="font-heading text-lg text-primary mb-3">{section.title}</h3>
+                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">{section.title}</h3>
                     <div className="space-y-3 text-justify">
+                        {section.passage && <h3 className="pb-5 font-bold">{section.passage}</h3>}
+
                         {Array.isArray(section.content) ? (
                             section.content.map((text, i) => (
                                 <p key={i} className="text-text leading-relaxed">
