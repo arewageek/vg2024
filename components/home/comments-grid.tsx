@@ -2,13 +2,18 @@
 
 import { motion } from "framer-motion";
 import { CommentCard } from "./comment-card";
-import { loremIpsum } from "lorem-ipsum"
 
-const comments = [
+interface IComments {
+    name: string
+    role: string,
+    comment: string
+}
+
+const comments: IComments[] = [
     {
-        name: "Austin Ameh",
-        role: "The Geek",
-        comment: "Waiting or content from them ;)"
+        name: "",
+        role: "",
+        comment: ""
     }
 ];
 

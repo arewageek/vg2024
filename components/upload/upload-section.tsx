@@ -1,6 +1,5 @@
 "use client";
 
-import { uploadFile } from "@/lib/storage";
 import { motion, AnimatePresence } from "framer-motion";
 import { Upload, Image as ImageIcon, Loader2 } from "lucide-react";
 import { useCallback, useState } from "react";
@@ -11,26 +10,9 @@ export function UploadSection() {
   const [myUploads, setMyUploads] = useState<string[]>([]);
   // const [selection, setSelection] = useState<File>()
 
-  const handleUpload = async (selection: File[]) => {
-    // setIsUploading(true);
-    // // Simulate upload
-    // setTimeout(() => {
-    //   setIsUploading(false);
-    //   setMyUploads(prev => [...prev, "https://images.unsplash.com/photo-1519741497674-611481863552"]);
-    // }, 2000);
-
-    const doUpload = await uploadFile({ file: selection[0] });
-
-    console.log({ doUpload })
-
-  };
-
-  // const onDrop = useCallback((acceptedFiles: File[]) => {
-  //   acceptedFiles.forEach((file: File) => {
-  //     console.log(file)
-  //     handleUpload(file)
-  //   })
-  // }, [])
+  const handleUpload = (files: File[]) => {
+    console.log(files)
+  }
 
   return (
     <div className="space-y-6">
@@ -128,3 +110,5 @@ export function UploadSection() {
     </div>
   );
 }
+
+export const dynamic = "force-dynamic";

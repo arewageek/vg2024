@@ -4,12 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const dummyPhotos = [
-  "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80",
-  "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
-  "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80",
-  "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&q=80",
-  "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80",
-  "https://images.unsplash.com/photo-1460364157752-926555421a7e?w=800&q=80",
+  "https://utfs.io/f/tB6jPcUp7EHXz05iQx8rMW3Ud45wIRT18nftceYmyVXSFZg2",
 ];
 
 const container = {
@@ -25,8 +20,8 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { 
-    opacity: 1, 
+  show: {
+    opacity: 1,
     scale: 1,
     transition: {
       type: "spring",
@@ -47,7 +42,7 @@ export function PhotoGrid() {
         <motion.div
           key={index}
           variants={item}
-          whileHover={{ 
+          whileHover={{
             scale: 1.05,
             transition: { type: "spring", stiffness: 300 }
           }}
