@@ -1,28 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LyricsButton } from "./lyrics/lyrics-button";
+import { useState } from "react";
+import { LyricsModal } from "./lyrics/lyrics-modal";
+import { songs } from "./lyrics/songs";
 
 interface MassSection {
     title: string;
     content: string | string[];
     type?: "reading" | "response" | "default";
     passage?: string
+    response?: string
 }
 
-const massOrder: MassSection[] = [
-    {
-        title: "Introductory Rite",
-        content: [
-            "1. Entrance hymn: what a Joyful day",
-            "2. Gloria: Ojima"
-        ],
-        type: "default"
-    },
-    {
-        title: "Liturgy of the Word",
-        content: "(Please be seated)",
-        type: "default",
-    },
+const readings: MassSection[] = [
     {
         title: "First Reading",
         passage: "A reading from the book of Genesis 2:18-24",
@@ -36,16 +28,12 @@ const massOrder: MassSection[] = [
         ],
         type: "reading"
     },
-    {
-        title: "Response",
-        content: "All: Thanks be to God",
-        type: "response"
-    },
+    { title: "Response", content: "All: Thanks be to God" },
     {
         title: "Responsorial Psalms",
+        response: "The Lord's merciful love fills the earth.",
         passage: "Psalms 33:12 and 18:20-21, 22",
         content: [
-            "The Lord's merciful love fills the earth.",
             "Blessed the nation whose God is the LORD, the people he had chosen as his heritage. Yes, the LORD'S eyes are on those who fear him, who hope in his merciful love.",
             "Our soul is waiting for the LORD. He is our help and our shield. In him do our hearts find joy. We trust in his holy name.",
             "May your merciful love be upon us, as we hope in you, O LORD."
@@ -98,86 +86,157 @@ const massOrder: MassSection[] = [
         content: "All: Praise to you, Lord Jesus Christ.",
         type: "response"
     },
-    {
-        title: "Rite of Marriage",
-        content: [
-            "Exchange of vows/ blessings of rings/ prayer of the faithful",
-            "Offertory: Thanksgiving of Amazing Grace"
-        ],
-        type: "default"
-    },
-    {
-        title: "Liturgy of the Eucharist",
-        content: [
-            "1. Presentation and preparation of gifts - Thanksgiving and love",
-            "2. Eucharistic prayer",
-            "3. The Lord's Prayer",
-            "4. Nuptial blessing",
-            "5. Holy Holy Holy: Mimo L'Odumare",
-            "6. Sign of peace (please shake hands or embrace while saying \"peace be with you\")",
-            "7. Breaking of the bread/ Lamb of God - Oyala ko'woicho",
-            "8. Communion - Deeper in Love - God give us Christian homes",
-            "9. Prayer after communion (please stand)"
-        ],
-        type: "default"
-    },
-    {
-        title: "Concluding Rites",
-        content: [
-            "1. Signing of certificates",
-            "2. Final blessings",
-            "3. Recessional hymn/ parade"
-        ],
-        type: "default"
-    }
 ];
 
 export function MassOrder() {
+    const [visibleLyrics, setVisibleLyrics] = useState<string>("")
+
     return (
-        <div className="space-y-6">
+        <>
+            <div className="space-y-6">
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
-            >
-                <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Important Notice</h3>
-                <div className="space-y-3 text-justify">
-                    <p className="text-text leading-relaxed font-bold">
-                        In order to respect the dignity of the ceremony, we ask that there is no flash photography during mass. Also, please silence all cell phones and other electronic devices.
-                    </p>
-                </div>
-            </motion.div>
-
-            {massOrder.map((section, index) => (
                 <motion.div
-                    key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className={`bg-surface p-6 rounded-xl border border-primary/10 ${section.type === "reading" ? "bg-primary/5" :
-                        section.type === "response" ? "bg-secondary/5" : ""
-                        }`}
+                    transition={{ delay: 0.1 }}
+                    className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
                 >
-                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">{section.title}</h3>
+                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Introductory Rite</h3>
                     <div className="space-y-3 text-justify">
-                        {section.passage && <h3 className="pb-5 font-bold">{section.passage}</h3>}
-
-                        {Array.isArray(section.content) ? (
-                            section.content.map((text, i) => (
-                                <p key={i} className="text-text leading-relaxed">
-                                    {text}
-                                </p>
-                            ))
-                        ) : (
-                            <p className="text-text leading-relaxed">{section.content}</p>
-                        )}
+                        <p className="text-text leading-relaxed font-bold">
+                            In order to respect the dignity of the ceremony, we ask that there is no flash photography during mass. Also, please silence all cell phones and other electronic devices.
+                        </p>
                     </div>
                 </motion.div>
-            ))}
-        </div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
+                >
+                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Introductory Rite</h3>
+                    <div className="space-y-3 text-justify">
+                        <ol className="text-text leading-relaxed list-decimal list-outside pl-4">
+                            <li>
+                                Entrance hymn: <LyricsButton songTitle="What a Joyful Day" onClick={() => setVisibleLyrics("What_a_Joyful_Day")} />
+                            </li>
+                            <li>
+                                Gloria: <LyricsButton songTitle="Ojima" onClick={() => setVisibleLyrics("Ojima")} />
+                            </li>
+                        </ol>
+                    </div>
+                </motion.div>
+
+
+                {readings.map((section, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className={`bg-surface p-6 rounded-xl border border-primary/10 ${section.type === "reading" ? "bg-primary/5" :
+                            section.type === "response" ? "bg-secondary/5" : ""
+                            }`}
+                    >
+                        <h3 className="font-heading text-lg text-[#F26B0F] mb-3">{section.title}</h3>
+                        <div className="space-y-3 text-justify">
+                            {section.passage && <h3 className="pb-5 font-bold">{section.passage}</h3>}
+                            {section.response && <p className="py-3 font-semibold">Response: {section.response}</p>}
+
+                            {Array.isArray(section.content) ? (
+                                section.content.map((text, i) => (
+                                    <p key={i} className="text-text leading-relaxed">
+                                        {text}
+                                    </p>
+                                ))
+                            ) : (
+                                <p className="text-text leading-relaxed">{section.content}</p>
+                            )}
+                        </div>
+                    </motion.div>
+                ))}
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
+                >
+                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Rite of Marriage</h3>
+                    <div className="space-y-3 text-justify">
+                        <p className="text-text leading-relaxed">
+                            Exchange of vows/ blessings of rings/ prayer of the faithful
+                        </p>
+
+                        <p className="text-text leading-relaxed">
+                            Offertory: <LyricsButton songTitle="Thanksgiving of Amazing Grace" onClick={() => setVisibleLyrics("ThanksgivingOfAmazingGraze")} />
+                        </p>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
+                >
+                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Liturgy of the Eucharist</h3>
+                    <div className="space-y-3 text-justify">
+                        <ol className="text-text leading-relaxed list-decimal list-outside pl-4">
+                            <li>
+                                Presentation and preparation of gifts: <LyricsButton songTitle="Thanksgiving and love" onClick={() => setVisibleLyrics("Thanksgiving_and_love")} />
+                            </li>
+                            <li>
+                                Eucharistic prayer
+                            </li>
+                            <li>
+                                The Lord's Prayer
+                            </li>
+                            <li>Nuptial blessing</li>
+                            <li>Holy Holy Holy: <LyricsButton songTitle="Mimo L'Odumare" onClick={() => setVisibleLyrics("mimo")} /></li>
+                            <li>Sign of peace (please shake hands or embrace while saying <b>"peace be with you"</b>)</li>
+                            <li>Breaking of the bread/ Lamb of God <LyricsButton songTitle="Oyala ko'woicho" onClick={() => setVisibleLyrics("oyala")} /></li>
+                            <li>
+                                Communion <LyricsButton songTitle="Deeper in Love" onClick={() => setVisibleLyrics("deeper_in_love")} /><br />
+                                <LyricsButton songTitle="God give us Christian homes" onClick={() => setVisibleLyrics("christian_homes")} />
+                            </li>
+                            <li>
+                                Prayer after communion (please stand)
+                            </li>
+                        </ol>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className={`bg-surface p-6 rounded-xl border border-primary/10 bg-primary/5"}`}
+                >
+                    <h3 className="font-heading text-lg text-[#F26B0F] mb-3">Concluding Rites</h3>
+                    <div className="space-y-3 text-justify">
+                        <ol className="text-text leading-relaxed list-decimal list-outside pl-4">
+                            <li>
+                                Signing of certificates
+                            </li>
+                            <li>
+                                Final blessings
+                            </li>
+                            <li>
+                                Recessional hymn/ parade
+                            </li>
+                        </ol>
+                    </div>
+                </motion.div>
+            </div>
+            <LyricsModal isOpen={!!visibleLyrics} onClose={() => setVisibleLyrics("")} song={songs[visibleLyrics]} />
+        </>
     );
 }

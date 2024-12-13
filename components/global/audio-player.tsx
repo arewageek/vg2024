@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const MUSIC_URL = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+const MUSIC_URL = " ";
 
 export function BackgroundMusic() {
     const [mounted, setMounted] = useState(false);

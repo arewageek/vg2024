@@ -1,6 +1,5 @@
 "use client";
 
-import { uploadFile } from "@/lib/storage";
 import { motion, AnimatePresence } from "framer-motion";
 import { Upload, Image as ImageIcon, Loader2 } from "lucide-react";
 import { useCallback, useState } from "react";
@@ -19,9 +18,9 @@ export function UploadSection() {
     //   setMyUploads(prev => [...prev, "https://images.unsplash.com/photo-1519741497674-611481863552"]);
     // }, 2000);
 
-    const doUpload = await uploadFile({ file: selection[0] });
+    // const doUpload = await uploadFile({ file: selection[0] });
 
-    console.log({ doUpload })
+    // console.log({ doUpload })
 
   };
 
