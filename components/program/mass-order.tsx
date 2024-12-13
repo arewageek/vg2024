@@ -203,8 +203,10 @@ export function MassOrder() {
                             <li>Sign of peace (please shake hands or embrace while saying <b>"peace be with you"</b>)</li>
                             <li>Breaking of the bread/ Lamb of God <LyricsButton songTitle="Oyala ko'woicho" onClick={() => setVisibleLyrics("oyala")} /></li>
                             <li>
-                                Communion <LyricsButton songTitle="Deeper in Love" onClick={() => setVisibleLyrics("deeper_in_love")} /><br />
-                                <LyricsButton songTitle="God give us Christian homes" onClick={() => setVisibleLyrics("christian_homes")} />
+                                Communion
+                                {/* <LyricsButton songTitle="Deeper in Love" onClick={() => setVisibleLyrics("deeper_in_love")} /><br />
+                                <LyricsButton songTitle="God give us Christian homes" onClick={() => setVisibleLyrics("christian_homes")} /> */}
+                                <LyricsButton songTitle="In Love With Jesus" onClick={() => setVisibleLyrics("inLoveWithJesus")} />
                             </li>
                             <li>
                                 Prayer after communion (please stand)
