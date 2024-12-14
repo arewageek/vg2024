@@ -134,16 +134,16 @@ export function HomeContent() {
                 viewport={{ once: true }}
                 className="space-y-8 relative"
             >
-                <motion.h2
+                {/* <motion.h2
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     className="font-heading text-2xl text-primary text-center"
                 >
                     Words from Our Wedding Party
-                </motion.h2>
+                </motion.h2> */}
 
-                <CommentsGrid />
+                {/* <CommentsGrid /> */}
             </motion.div>
         </motion.main>
     );
