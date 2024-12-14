@@ -26,7 +26,7 @@ export default function Uploads() {
       </motion.div>
 
       <UploadSection />
-      <PhotoGrid />
+      {/* <PhotoGrid /> */}
     </motion.main>
   );
 }

@@ -57,6 +57,16 @@ export function LyricsModal({ isOpen, onClose, song }: LyricsModalProps) {
                         </motion.button>
 
                         {/* Lyrics Content */}
+                        <div className="py-3 font-bold px-5">
+                            {song.chorus && song.chorus.split('\n').map((line: string, lineIndex: number) => (
+                                <p
+                                    key={lineIndex}
+                                    className={`mb-2 leading-relaxed`}
+                                >
+                                    {line}
+                                </p>
+                            ))}
+                        </div>
                         <LyricsContent lyrics={song.lyrics} />
                     </motion.div>
                 </motion.div>

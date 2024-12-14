@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Upload, Image as ImageIcon, Loader2 } from "lucide-react";
+import Link from "next/link";
 import { useCallback, useState } from "react";
 import Dropzone from "react-dropzone"
 
@@ -33,7 +34,15 @@ export function UploadSection() {
 
   return (
     <div className="space-y-6">
-      <Dropzone onDrop={acceptedFiles => handleUpload(acceptedFiles)}>
+
+      <div className="flex items-center justify-center">
+        <Link href="https://drive.google.com/drive/folders/1yao6mT6nwgXWYnzJQz5fTfDdbqFsmYWP?usp=sharing" target="_blank" className="font-semibold text-sm px-5 py-3 rounded-xl bg-primary-dark text-white hover:bg-primary transition shadow">
+          Upload Via Google Drive
+        </Link>
+      </div>
+
+
+      {/* <Dropzone onDrop={acceptedFiles => handleUpload(acceptedFiles)}>
         {({ getRootProps, getInputProps }) => (
 
           <div {...getRootProps()}>
@@ -123,7 +132,7 @@ export function UploadSection() {
             ))}
           </div>
         </motion.div>
-      )}
+      )} */}
     </div>
   );
 }
