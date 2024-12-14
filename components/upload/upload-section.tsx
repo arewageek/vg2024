@@ -36,7 +36,7 @@ export function UploadSection() {
     <div className="space-y-6">
 
       <div className="flex items-center justify-center">
-        <Link href="https://drive.google.com/drive/folders/1yao6mT6nwgXWYnzJQz5fTfDdbqFsmYWP?usp=sharing" target="_blank" className="font-semibold text-sm px-5 py-3 rounded-xl bg-primary-dark text-white hover:bg-primary transition shadow">
+        <Link href="https://drive.google.com/drive/folders/1TE2mRp9IpCfIyQnBWZ3i0PSgfPMw0rOq?usp=sharing" target="_blank" className="font-semibold text-sm px-5 py-3 rounded-xl bg-primary-dark text-white hover:bg-primary transition shadow">
           Upload Via Google Drive
         </Link>
       </div>

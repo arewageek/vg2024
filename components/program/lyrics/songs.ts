@@ -67,9 +67,6 @@ Amazing grace`,
       "With thankful hearts and joyful songs \nWe approach Your Holy Altar \nIn thanksgiving and love \nBearing gifts of Your Creation \nWe return what you have given \nIn thanksgiving and love",
       "To you father, now we offer  \nwith the host and with the chalice. \nIn thanksgiving and love  \nAll we have and all our being  \nin this sacrifice most holy\nIn thanksgiving and love.",
       "God give us Christian homes \nGod give us Christian homes \nGod give us Christian homes",
-      "Homes where the father is true and strong \nHomes that are free from the blight of wrong \nHomes that are joyous with love and song \nGod give us Christian homes \nGod give us Christian homes \nGod give us Christian homes",
-      "Homes where the mother, in caring quest \nStrives to show others Your way is best \nHomes where the Lord is an honoured guest \nGod give us Christian homes \nGod give us Christian homes \nGod give us Christian homes",
-      "Homes where the children are led to know \nChrist in His beauty who loves them so \nHomes where the altar fires burn and glow \nGod give us Christian homes \nGod give us Christian homes!"
     ],
   },
   mimo: {
@@ -82,14 +79,15 @@ Amazing grace`,
     artist: "",
     lyrics: [],
   },
-  deeper_in_love: {
-    title: "Deeper in Love",
-    artist: "",
-    lyrics: [],
-  },
   christian_homes: {
-    title: "God give us Christian homes",
+    title: "God give us Christian Homes",
     artist: "",
-    lyrics: [],
+    lyrics: [
+      "God give us Christian homes \nHomes where the Bible is loved and taught \nHomes where the Master's will is sought \nHomes crowned with beauty Your love has wrought",
+      "God give us Christian homes \nGod give us Christian homes \nGod give us Christian homes",
+      "Homes where the father is true and strong \nHomes that are free from the blight of wrong \nHomes that are joyous with love and song \nGod give us Christian homes \nGod give us Christian homes \nGod give us Christian homes",
+      "Homes where the mother, in caring quest \nStrives to show others Your way is best \nHomes where the Lord is an honoured guest \nGod give us Christian homes \nGod give us Christian homes \nGod give us Christian homes",
+      "Homes where the children are led to know \nChrist in His beauty who loves them so \nHomes where the altar fires burn and glow \nGod give us Christian homes \nGod give us Christian homes!",
+    ],
   },
 };

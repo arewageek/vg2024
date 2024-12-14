@@ -206,7 +206,8 @@ export function MassOrder() {
                                 Communion
                                 {/* <LyricsButton songTitle="Deeper in Love" onClick={() => setVisibleLyrics("deeper_in_love")} /><br />
                                 <LyricsButton songTitle="God give us Christian homes" onClick={() => setVisibleLyrics("christian_homes")} /> */}
-                                <LyricsButton songTitle="In Love With Jesus" onClick={() => setVisibleLyrics("inLoveWithJesus")} />
+                                <LyricsButton songTitle="Deeper in Love" onClick={() => setVisibleLyrics("inLoveWithJesus")} />
+                                <LyricsButton songTitle="God Give Us Christian Homes" onClick={() => setVisibleLyrics("christian_homes")} />
                             </li>
                             <li>
                                 Prayer after communion (please stand)
