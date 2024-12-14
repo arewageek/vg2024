@@ -5,7 +5,22 @@ import { useState } from "react";
 import { PhotoModal } from "./photo-modal";
 import { PhotoCategories } from "./photo-categories";
 
-const photos = [
+interface IPhotos {
+    url: string,
+    description: string,
+    year: string,
+    category: string,
+    isVideo?: boolean
+}
+
+const photos: IPhotos[] = [
+    {
+        url: "assets/forever-fav.mp4",
+        description: "Video content",
+        year: "2024",
+        category: "Love Story",
+        isVideo: true
+    },
     {
         url: "assets/IMG_3524.jpg",
         description: "Pre wedding photos",
@@ -190,6 +205,7 @@ export function PhotoGrid() {
             <PhotoCategories active={activeCategory} onSelect={setActiveCategory} />
 
             <AnimatePresence mode="wait">
+
                 <motion.div
                     key={activeCategory}
                     variants={timelineVariants}
@@ -221,12 +237,27 @@ export function PhotoGrid() {
                                     }}
                                     className="relative aspect-[16/16] rounded-xl overflow-hidden cursor-pointer"
                                 >
-                                    <motion.img
-                                        layoutId={`gallery-image-${photo.url}`}
-                                        src={photo.url}
-                                        alt={`Memory ${index + 1}`}
-                                        className="w-full h-full object-cover"
-                                    />
+                                    {photo.isVideo ?
+                                        <motion.video
+                                            layoutId={`gallery-image-assets/${photo.url}`}
+                                            src={"assets/forever-fav.mp4"}
+                                            className="w-full h-full object-cover"
+                                            autoPlay
+                                            loop
+                                            playsInline
+                                            onMouseOver={(e) => e.currentTarget.play()}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.pause();
+                                                e.currentTarget.currentTime = 0;
+                                            }}
+                                        />
+                                        : <motion.img
+                                            layoutId={`gallery-image-${photo.url}`}
+                                            src={photo.url}
+                                            alt={`Memory ${index + 1}`}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    }
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         whileHover={{ opacity: 1 }}

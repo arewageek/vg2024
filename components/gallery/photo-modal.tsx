@@ -10,6 +10,7 @@ interface PhotoModalProps {
         url: string;
         description: string;
         year: string;
+        isVideo?: boolean
     } | null;
 }
 
@@ -44,12 +45,26 @@ export function PhotoModal({ isOpen, onClose, photo }: PhotoModalProps) {
                         </motion.button>
 
                         <div className="aspect-[4/4] relative">
-                            <motion.img
-                                layoutId={`gallery-image-${photo.url}`}
-                                src={photo.url}
-                                alt={photo.description}
-                                className="w-full h-full object-cover"
-                            />
+                            {photo.isVideo ?
+                                <motion.video
+                                    layoutId={`gallery-image-assets/${photo.url}`}
+                                    src={"assets/forever-fav.mp4"}
+                                    className="w-full h-full object-cover"
+                                    autoPlay
+                                    loop
+                                    playsInline
+                                    onMouseOver={(e) => e.currentTarget.play()}
+                                    onMouseOut={(e) => {
+                                        e.currentTarget.pause();
+                                        e.currentTarget.currentTime = 0;
+                                    }}
+                                /> :
+                                <motion.img
+                                    layoutId={`gallery-image-${photo.url}`}
+                                    src={photo.url}
+                                    alt={photo.description}
+                                    className="w-full h-full object-cover"
+                                />}
                         </div>
 
                         <motion.div
